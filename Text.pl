@@ -7,14 +7,39 @@ use warnings;
 # grep을 사용해 배열(@foundFtpUsers)의 존재 여부를 확인할 수 있다. 
 # 참이면 배열값을 리턴
 
-my $ftpUsers = "test";
-my @foundFtpUsers = ("ghgh", "test", 'teest', 'qwe', 'asd');
-my $includeFtpUsers = \@foundFtpUsers;
+my $test = "/test/test.txt";
+my $basetest = $test =~ /[^\/\n\t]+$/ ;
 
-#print grep  {$ftpUsers eq $_} @foundFtpUsers ;
-if ( $ftpUsers ne '' and grep  {$ftpUsers eq $_} @{$includeFtpUsers}) {
-    print 'HEllo\n'
+my ($old_name, $new_name) = @ARGV;
+if ( !defined ($old_name && $new_name)  ) {
+    print "인수를 넣어주세요";
+    exit;
 }
+$old_name =~ s/\\/\//g ;
+$new_name =~ s/\\/\//g ;
+
+if (-e $old_name) {
+    if ( -d $new_name ) {
+        (my $base_name = $old_name) =~ /[^\/\n\t]+$/ ;
+        $new_name .= "/$base_name";
+    }
+    
+    rename ( $old_name, $new_name ) || die "rename failed :$!\n";
+    }
+else {      
+    print "NO Fire or Diretory : $!";
+    exit;
+}
+
+
+
+
+opendir (GIT, "C:/_Git")  || die "no git : $!\n";
+while ( my $name = readdir(GIT)) {
+    print "$name\n";
+    
+}
+closedir(GIT)
 
 
 __DATA__
