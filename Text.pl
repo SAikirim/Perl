@@ -2,18 +2,21 @@
 use strict;
 use warnings;
 
-#
-# mv ¸í·É¾î
-# mv Ã³·³ »ç¿ë, ¿É¼Ç ¾øÀ½, ÀÎ¼ö 2°³¸¦ ¹ŞÀ½ 
-# 2¹øÂ° ÀÎ¼ö°¡ µğ·ºÅÍ¸®¸é ±× µğ·ºÅÍ¸® ¹Ø¿¡ ÆÄÀÏ »ı¼º
-#
 
-opendir (GIT, "C:/_Git")  || die "no git : $!\n";
-while ( my $name = readdir(GIT)) {
-    print "$name\n";
-    
+#
+# mv ï¿½ï¿½ï¿½É¾ï¿½
+# mv Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½É¼ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Î¼ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+# 2ï¿½ï¿½Â° ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ø¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+# by SAiki 
+# 
+
+my %fruit = (red => "apple", yellow => "banana", purple => "grape");
+
+# í•´ì‹œ ìš”ì†Œë¥¼ ëª¨ë‘ ì¶œë ¥
+while( my ($key, $val) = each %fruit) {
+ 	print "$key : $val \n";
 }
-closedir(GIT)
+
 
 
 __DATA__
@@ -24,21 +27,21 @@ green
 red
 blue
 blue
-/etc/vsftpd.conf ÆÄÀÏ ³»¿ë
+/etc/vsftpd.conf ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 line0014: pam_service_name=vsftpd
 line0017: userlist_enable=yes
 line0018: userlist_deny=yes
 
-/etc/vsftpd.ftpusers ÆÄÀÏ ¹ÌÁ¸Àç
-/etc/vsftpd.user_list ÆÄÀÏ ³»¿ë
+/etc/vsftpd.ftpusers ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+/etc/vsftpd.user_list ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 root
 
 line0014: pam_service_name=vsftpd
 line0017: userlist_enable=yes
 line0018: userlist_deny=yes
 
-/etc/vsftpd/ftpusers ÆÄÀÏ ³»¿ë
+/etc/vsftpd/ftpusers ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 ssr1
 
-/etc/vsftpd.user_list ÆÄÀÏ ³»¿ë
+/etc/vsftpd.user_list ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 root
